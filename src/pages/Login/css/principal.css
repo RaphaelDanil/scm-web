@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em uma coluna (topo para baixo) */
+    height: 100vh; /* Define a altura total da tela */
+    margin: 0; /* Remove a margem padrão do body */
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 380px; /* Tamanho do menu lateral */
+    background: #1b1744;
+}
+
+.sidebar .logo-details {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.sidebar .logo-details i {
+    font-size: 30px;
+    color: #fff;
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sidebar .logo-details .logo_name {
+    font-size: 22px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar .nav-links {
+    height: 100%;
+    padding-top: 30px;
+}
+
+.sidebar .nav-links li {
+    position: relative;
+    list-style: none;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li:hover{
+    background: #231f4b;
+}
+
+.sidebar .nav-links li .menu-nome{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 5px 20px; /* Ajuste conforme necessário */
+    width: 100%; /* Defina a largura completa */
+    font-size: 20px;
+}
+
+.sidebar .nav-links li a {
+    height: 50px;
+    width: 100%; /* Defina a largura completa */
+    text-align: left; /* Alinhe o texto à esquerda */
+    text-decoration: none;
+    line-height: 50px;
+    color: #ffffff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px; /* Adicione um padding para afastar o texto da borda */
+}
+
+.sidebar .nav-links li a .nome-sis{
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.sidebar .nav-links li .sub-menu{
+    padding: 0px 20px 0px 20px; /* Ajuste conforme necessário */
+    margin-top: 0px;
+    background: #231f4b;
+    /* display: none; */
+}
+
+.sidebar .nav-links li .sub-menu li .menu-nome{
+    padding: 0px 20px 0px 0px; /* Ajuste conforme necessário */
+}
+
+
+.sidebar .nav-links li .sub-menu a{
+    color: white;
+    font-size: 15px;
+    margin-top: 4px;
+    padding: 4px 40px; /* Ajuste conforme necessário */
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    /* background-color: red; */
+}
+
+
+.sidebar .nav-links li .sub-menu a:hover{
+    opacity: 1;
+}
+
+.sub-menu {
+    max-height: 0; /* Começa com altura 0 */
+    overflow: hidden; /* Oculta o conteúdo que excede a altura */
+    transition: max-height 0.5s ease; /* Transição suave da altura */
+    padding-left: 20px;
+    background: #1d1b31;
+}
+
+.sub-menu.show {
+    max-height: 800px; /* Altura máxima ao expandir (ajuste conforme o conteúdo) */
+}
+
+/* Girar seta suavemente */
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+    transform: rotate(90deg); /* Girar a seta ao expandir */
+}
+
+
+.top-bar {
+    display: flex;
+    justify-content: space-between; /* Distribui o conteúdo nos extremos */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 0 20px; /* Ajusta o espaçamento interno da barra */
+    background-color: #f8f9fa;
+    height: 60px;
+    padding-left: 380px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-pagina {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.info-user {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o nome, foto e ícone */
+}
+
+.info-user .nome-user {
+    font-size: 15px;
+    font-weight: 500;
+    color: #11101d;
+}
+
+.info-user .user-photo {
+    width: 40px; /* Tamanho do círculo para a foto */
+    height: 40px;
+    border-radius: 50%; /* Deixa a imagem em formato circular */
+    background-color: #ccc; /* Cor de fundo caso a foto não esteja disponível */
+    background-size: cover; /* Ajusta a imagem para cobrir o círculo */
+    background-position: center; /* Centraliza a imagem */
+}
+
+.info-user .user-photo img {
+    width: 100%; /* A imagem ocupa todo o círculo */
+    height: 100%;
+    border-radius: 50%; /* Garante que a imagem fique circular */
+    object-fit: cover; /* Ajusta a imagem sem distorção */
+}
+
+.info-user .notification-icon {
+    font-size: 24px; /* Tamanho do ícone */
+    color: #4b495a; /* Cor do ícone */
+    cursor: pointer; /* Cursor de pointer ao passar sobre o ícone */
+    transition: color 0.3s ease; /* Transição suave da cor */
+}
+
+.info-user .notification-icon:hover {
+    color: #848199;
+    animation: shake 0.5s ease; /* Aplica a animação de tremor */
+}
+
+/* Definição da animação de tremor */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+
+.form-principal {
+    width: 100%;
+    height: 100%;
+    padding-left: 380px;
+    background-color: rgb(255, 255, 255);
+}
+
+.titulo-pagina {
+    font-size: 15px;
+    font-weight: bold;
+    color: #524d5f;
+    padding: 15px;
+    float: left;
+    text-align: right;
+    text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.3); /* Sombra leve */
+}
+
+.home-icon {
+    font-size: 24px; /* Tamanho do ícone */
+    color: #333; /* Cor do ícone, você pode mudar conforme necessário */
+    margin-right: 10px; /* Espaço entre o ícone e o título */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.home-icon:hover {
+    color: #524d5f; /* Colorir o ícone ao passar o mouse */
+}
+
+
+

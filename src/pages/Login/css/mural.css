@@ -1,0 +1,91 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas de tamanho igual */
+    grid-template-rows: 1fr 1fr; /* 2 linhas de tamanho igual */
+    gap: 20px; /* Espaço entre os boxes */
+    width: 80vw; /* Ocupa 80% da largura da viewport */
+    height: 80vh; /* Ocupa 80% da altura da viewport */
+    padding: 20px 20px;
+}
+
+/* Estilo para os boxes */
+/* Container que vai segurar os 4 boxes */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas de tamanho igual */
+    grid-template-rows: 1fr 1fr; /* 2 linhas de tamanho igual */
+    gap: 20px; /* Espaço entre os boxes */
+    width: 80vw; /* Ocupa 80% da largura da viewport */
+    height: 80vh; /* Ocupa 80% da altura da viewport */
+}
+
+/* Estilo para os boxes */
+.box {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    position: relative; /* Necessário para posicionar o ícone */
+    transition: transform 0.3s;
+}
+
+/* Efeito hover nos boxes */
+.box:hover {
+    transform: scale(1.02);
+}
+
+/* Estilos para título e parágrafo nos boxes */
+.box h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 0; /* Remove a margem padrão do h3 */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc; /* Linha separadora abaixo do título */
+    width: 100%; /* Linha cobre toda a largura do box */
+}
+
+.box p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 15px; /* Espaçamento entre a linha e o parágrafo */
+    text-align: left; /* Alinhamento do texto à esquerda */
+}
+
+/* Ícone */
+.box .link-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.box .link-icon:hover {
+    color: #0056b3;
+}
+
+
+/* Estilos para a frase fixa */
+.fixed-phrase {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #504e4e;
+    text-align: left;
+    padding: 10px;
+    margin-left: 30px;
+    font-size: 16px;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fixed-phrase.active {
+    opacity: 1;
+}

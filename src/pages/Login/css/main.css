@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.layout-menu {
+    width: 15vw;
+    height: 100vh;
+    display: flex;
+    background-color: #2c2e3e;
+    flex-direction: column;
+    align-items: center;
+}
+
+.layout-container {
+    width: 85vw;
+    height: 100vh;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.menu-top {
+    width: 100%;
+    height: 5%;
+}
+
+.linha-divisao {
+    width: 80%;
+    height: 1px;
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+.menu-nav {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.menu-nav .sidenav-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    padding-left: 15px; /* Adiciona um espaçamento à esquerda para o submenu */
+}
+
+.menu-nav .sidenav-item.active .sidenav-menu {
+    max-height: 900px; /* Ajuste conforme necessário */
+}
+
+.menu-nav .sidenav-item {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o menu principal à esquerda */
+    padding: 10px;
+    padding-left: 15px; /* Adiciona uma margem à esquerda de 15px */
+}
+
+.menu-nav .sidenav-link {
+    text-decoration: none;
+    color: rgb(199, 195, 195);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha o texto do menu principal à esquerda */
+    width: 100%;
+}
+
+.menu-nav .sidenav-menu .sidenav-item {
+    align-items: flex-start; /* Alinha os itens do submenu à esquerda */
+}
+
+.menu-nav .sidenav-menu .sidenav-link {
+    justify-content: flex-start; /* Alinha o texto do submenu à esquerda */
+    padding-right: 15px; /* Adiciona uma margem à direita de 15px */
+    font-size: 0.9em; /* Define um tamanho de fonte menor para o submenu */
+}
+
+.menu-nav a:hover {
+    color: #fff;
+}
+
+.menu-principal {
+    position: relative;
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.submenu-item {
+    position: relative;
+}
+
+.sub-submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
